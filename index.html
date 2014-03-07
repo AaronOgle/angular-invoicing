@@ -25,12 +25,12 @@
   <table class="table">
     <tr>
       <td align="center" style="background-color:#357EBD;color:#FFF" colspan="2">
-        INVOICE
+        INVOICE <input type="text" id="invoice_number" ng-model="invoice.invoice_number" />
       </td>
     </tr>
     <tr>
       <td>
-        <h4>Invoice #<input type="text" id="invoice_number" ng-model="invoice.invoice_number" /></h4>
+        <!--<h4>Invoice #<input type="text" id="invoice_number" ng-model="invoice.invoice_number" /></h4>-->
       </td>
       <td align="right">
         <div class="date">{{getTime() | date:'mediumDate'}}</div>
