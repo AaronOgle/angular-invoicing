@@ -1,4 +1,4 @@
-app.directive('textarea', function() {
+angular.module('angular-invoice').directive('textarea', function() {
     return {
         restrict: 'E',
         link: function( scope , element , attributes ) {
