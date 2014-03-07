@@ -1,4 +1,8 @@
-angular.module('angular-invoice', []);
+angular.module('angular-invoice', []).directive('jqAnimate', function() {
+  return function(scope, instanceElement){
+    setTimeout(function() {instanceElement.show('slow');}, 0);
+  }
+});
 
 angular.module('angular-invoice').controller('InvoiceController', ['$scope', '$q', function($scope, $q) {
 
@@ -71,13 +75,6 @@ angular.module('angular-invoice').controller('InvoiceController', ['$scope', '$q
   };
 
 }]);
-
-angular.module('jqanim', []).directive('jqAnimate', function() {
-  return function(scope, instanceElement){
-    setTimeout(function() {instanceElement.show('slow');}, 0);
-  }
-});
-
 
 // window.onbeforeunload = function(e) {
 //   confirm('Are you sure you would like to close this tab? All your data will be lost');
