@@ -1,4 +1,6 @@
-function InvoiceController($scope) {
+angular.module('angular-invoice', []);
+
+angular.module('angular-invoice').controller('InvoiceController', ['$scope', '$q', function($scope, $q) {
 
   $scope.printMode = false;
 
@@ -68,7 +70,7 @@ function InvoiceController($scope) {
     }
   };
 
-};
+}]);
 
 angular.module('jqanim', []).directive('jqAnimate', function() {
   return function(scope, instanceElement){
@@ -76,16 +78,6 @@ angular.module('jqanim', []).directive('jqAnimate', function() {
   }
 });
 
-function readURL(input) {
-  if (input.files && input.files[0]) {
-    var reader = new FileReader();
-    reader.onload = function (e) {
-      $('#company_logo').attr('src', e.target.result);
-      localStorage["logo"] = e.target.result;
-    }
-    reader.readAsDataURL(input.files[0]);
-  }
-}
 
 // window.onbeforeunload = function(e) {
 //   confirm('Are you sure you would like to close this tab? All your data will be lost');
@@ -93,7 +85,4 @@ function readURL(input) {
 
 $(document).ready(function() {
   $("#invoice_number").focus();
-  $("#imgInp").change(function() {
-    readURL(this);
-  });
 });
