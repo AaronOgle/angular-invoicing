@@ -82,3 +82,9 @@ div.container{
   top: -1px;
   width: 28px;
 }
+
+@media print {
+  textarea {
+   resize: none;
+  }
+}
