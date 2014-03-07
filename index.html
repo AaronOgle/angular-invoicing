@@ -87,7 +87,7 @@
             {{invoice_sub_total() | currency}}
           </td>
       </tr>
-      <tr ng-hide="noTax">
+      <tr ng-if="!noTax">
           <td colspan="4" align="right">
             Tax(%): <input ng:model="invoice.tax" ng:validate="number" style="width:43px">
           </td>
