@@ -44,25 +44,9 @@ function InvoiceController($scope) {
     $scope.invoice.items.push({ qty:0, cost:0, description:"" });
   };
 
-  $scope.removeLogo = function(element) {
-    var elem = angular.element("#remove_logo");
-    if(elem.text() == "Show Logo"){
-      elem.text("Remove Logo");
-      $scope.logoRemoved = false;
-    } else {
-      elem.text("Show Logo");
-      $scope.logoRemoved = true;
-    }
-    localStorage["logo"] = "";
-  };
-
-  $scope.editLogo = function() {
-    $("#imgInp").trigger("click");
-  };
-
-  $scope.showLogo = function() {
-    $scope.logoRemoved = false;
-  };
+  $scope.getTime = function() {
+    return new Date().getTime();
+  }
 
   $scope.removeItem = function(item) {
     $scope.invoice.items.splice($scope.invoice.items.indexOf(item), 1);
