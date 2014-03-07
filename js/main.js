@@ -4,7 +4,7 @@ angular.module('angular-invoice', []).directive('jqAnimate', function() {
   }
 });
 
-angular.module('angular-invoice').controller('InvoiceController', ['$scope', '$q', function($scope, $q) {
+angular.module('angular-invoice').controller('InvoiceController', ['$scope', '$http', '$q', function($scope, $http, $q) {
 
   $scope.printMode = false;
 
@@ -73,6 +73,10 @@ angular.module('angular-invoice').controller('InvoiceController', ['$scope', '$q
       $scope.invoice = sample_invoice;
     }
   };
+  
+  $scope.loadConfig = function () {
+	  console.log($scope.configUrl);
+  }
 
 }]);
 
