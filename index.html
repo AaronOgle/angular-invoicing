@@ -33,13 +33,7 @@
         <h4>Invoice #<input type="text" id="invoice_number" ng-model="invoice.invoice_number" /></h4>
       </td>
       <td align="right">
-        <input type="file" id="imgInp" />
-        <img ng-hide="logoRemoved" id="company_logo" src="{{ logo }}" alt="your image" width="300" />
-        <br/>
-        <div class="noPrint" ng-hide="printMode">
-          <a ng-click="editLogo()" href >Edit Logo</a>
-          <a ng-click="removeLogo()" id="remove_logo" href >Remove logo</a>
-        </div>
+        <div class="date">{{getTime() | date:'mediumDate'}}</div>
       </td>
     </tr>
   </table>
