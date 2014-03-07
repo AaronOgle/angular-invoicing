@@ -2,7 +2,6 @@ function InvoiceController($scope) {
 
   $scope.logoRemoved = false;
   $scope.printMode = false;
-  $scope.noTax = true;
 
   var sample_invoice = {
     tax: 13.00,
