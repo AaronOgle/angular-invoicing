@@ -69,6 +69,11 @@ div.container{
   width: 223px;
 }
 
+.invoiceBar {
+  background-color: #357EBD;
+  color: #FFF;
+}
+
 #invoice_number {
   background-color: #357EBD;
   color: #FFF;
