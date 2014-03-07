@@ -8,14 +8,13 @@
 </head>
 <body ng:app="angular-invoice" ng:controller="InvoiceController" >
   <div id="css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
   </div>
 <div class="container" width="800px" id="invoice" >
-  <a ng-hide="printMode" href="https://github.com/metaware/angular-invoicing"><img ng-hide="printMode" style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub"></a>
   <table class="table">
     <tr>
-      <td align="center" style="background-color:#357EBD;color:#FFF" colspan="2">
+      <td align="center" class="invoiceBar" colspan="2">
         INVOICE <input type="text" id="invoice_number" ng-model="invoice.invoice_number" />
       </td>
     </tr>
