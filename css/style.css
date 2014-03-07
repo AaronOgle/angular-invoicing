@@ -65,6 +65,11 @@ div.container{
   font-size: 30px;
 }
 
+.description {
+  width: 213px;
+  height: 72px;
+}
+
 #invoice_number {
   background-color: #357EBD;
   color: #FFF;
