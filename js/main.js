@@ -80,6 +80,7 @@ angular.module('angular-invoice').controller('InvoiceController', ['$scope', '$h
 		url: $scope.configUrl
 	}).success(function (data, status, headers, config) {
 		$scope.invoice = data;
+		console.log(data);
 	});
   }
 
