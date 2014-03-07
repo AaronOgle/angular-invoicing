@@ -75,7 +75,12 @@ angular.module('angular-invoice').controller('InvoiceController', ['$scope', '$h
   };
   
   $scope.loadConfig = function () {
-	  console.log($scope.configUrl);
+	$http({
+		method: 'GET', 
+		url: $scope.configUrl
+	}).success(function (data, status, headers, config) {
+		$scope.invoice = data;
+	});
   }
 
 }]);
