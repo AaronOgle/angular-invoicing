@@ -1,10 +1,9 @@
 function InvoiceController($scope) {
 
-  $scope.logoRemoved = false;
   $scope.printMode = false;
 
   var sample_invoice = {
-    tax: 13.00,
+    tax: 0.00,
     invoice_number: 10,
     customer_info: {
       name: "Mr. John Doe",
@@ -25,19 +24,11 @@ function InvoiceController($scope) {
     ]
   };
 
-  var default_logo = "images/metaware_logo.png";
-
   if(localStorage["invoice"] == "" || localStorage["invoice"] == null){
     $scope.invoice = sample_invoice;
   }
   else{
     $scope.invoice =  JSON.parse(localStorage["invoice"]);
-  }
-
-  if (localStorage["logo"]) {
-    $scope.logo = localStorage["logo"];
-  } else {
-    $scope.logo = default_logo;
   }
 
   $scope.addItem = function() {
@@ -77,7 +68,6 @@ function InvoiceController($scope) {
     var confirmClear = confirm("Are you sure you would like to clear the invoice?");
     if(confirmClear){
       localStorage["invoice"] = "";
-      localStorage["logo"] = "";
       $scope.invoice = sample_invoice;
     }
   };
