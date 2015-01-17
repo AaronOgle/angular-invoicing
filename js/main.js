@@ -42,7 +42,11 @@ angular.module('angular-invoice').controller('InvoiceController', ['$scope', '$h
   };
 
   $scope.getTime = function() {
-    return new Date().getTime();
+  	if (!$scope.invoice.date) {
+  		$scope.invoice.date = new Date().getTime();
+  	}
+  	
+  	return $scope.invoice.date;
   }
 
   $scope.removeItem = function(item) {
