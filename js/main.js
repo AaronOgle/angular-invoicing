@@ -33,8 +33,13 @@ angular.module('angular-invoice').controller('InvoiceController', ['$scope', '$h
   if(localStorage["invoice"] == "" || localStorage["invoice"] == null){
     $scope.invoice = sample_invoice;
   }
-  else{
-    $scope.invoice =  JSON.parse(localStorage["invoice"]);
+  else {
+    try {
+        $scope.invoice =  JSON.parse(localStorage["invoice"]);
+    } catch (e) {
+        alert('Improper formated JSON, unable to load');
+    }
+
   }
 
   $scope.addItem = function() {
@@ -45,7 +50,7 @@ angular.module('angular-invoice').controller('InvoiceController', ['$scope', '$h
   	if (!$scope.invoice.date) {
   		$scope.invoice.date = new Date().getTime();
   	}
-  	
+
   	return $scope.invoice.date;
   }
 
@@ -77,10 +82,10 @@ angular.module('angular-invoice').controller('InvoiceController', ['$scope', '$h
       $scope.invoice = sample_invoice;
     }
   };
-  
+
   $scope.loadConfig = function () {
 	$http({
-		method: 'GET', 
+		method: 'GET',
 		url: $scope.configUrl
 	}).success(function (data, status, headers, config) {
 		$scope.invoice = data;
@@ -89,10 +94,6 @@ angular.module('angular-invoice').controller('InvoiceController', ['$scope', '$h
   }
 
 }]);
-
-// window.onbeforeunload = function(e) {
-//   confirm('Are you sure you would like to close this tab? All your data will be lost');
-// };
 
 $(document).ready(function() {
   $("#invoice_number").focus();
