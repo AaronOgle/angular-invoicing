@@ -6,7 +6,7 @@
   <script src="http://code.jquery.com/jquery-1.7.1.js" type="text/javascript"></script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
-  
+
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -20,7 +20,7 @@
     </tr>
     <tr>
       <td>
-        <!--<h4>Invoice #<input type="text" id="invoice_number" ng-model="invoice.invoice_number" /></h4>-->
+        <h3 ng-if="invoice.paid" style="color: red;margin-top: 4px;">Invoice Paid</h3>
       </td>
       <td align="right">
         <div class="date">{{invoice.date | date:'mediumDate'}}</div>
@@ -82,12 +82,12 @@
           </td>
       </tr>
   </table>
-  
+
   <div class="noPrint">
     <input ng:model="configUrl" placeholder="Link to json file" ng-hide="printMode" />
     <a href="#" class="btn btn-primary" ng-hide="printMode" ng-click="loadConfig()">Load Config</a>
   </div>
-  
+
   <div class="noPrint">
     <a href="#" class="btn btn-primary" ng-show="printMode" ng-click="printInfo()">Print</a>
     <a href="#" class="btn btn-primary" ng-click="clearLocalStorage()">Reset</a>
