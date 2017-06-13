@@ -10,6 +10,8 @@ angular.module('angular-invoice').controller('InvoiceController', ['$scope', '$h
 
   var sample_invoice = {
     tax: 0.00,
+    date: new Date(),
+    paid: false,
     invoice_number: 10,
     customer_info: {
       name: "Mr. John Doe",
