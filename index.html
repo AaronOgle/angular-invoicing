@@ -20,7 +20,7 @@
     </tr>
     <tr>
       <td>
-        <h3 ng-if="invoice.paid" style="color: red;margin-top: 4px;">Invoice Paid</h3>
+        <h3 ng:show="invoice.paid" style="color: red;margin-top: 4px;">Invoice Paid</h3>
       </td>
       <td align="right">
         <div class="date">{{invoice.date | date:'mediumDate'}}</div>
